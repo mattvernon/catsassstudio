@@ -66,6 +66,19 @@ li {
   padding: 0 60px;
   margin: 0 auto; }
 
+.button {
+  background-color: #FF6F6F;
+  padding: 20px 40px 22px 40px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  display: inline-block; }
+
+.button:hover {
+  opacity: 1;
+  transform: scale(1.05); }
+
 .nav {
   display: flex;
   align-items: center;
@@ -75,12 +88,12 @@ li {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin: 0 15px; }
-  .nav .button {
+  .nav .hollow-button {
     padding: 15px 40px;
     border: 1px solid white;
     border-radius: 4px;
     transition: 0.2s; }
-  .nav .button:hover {
+  .nav .hollow-button:hover {
     background-color: white;
     color: #101010;
     opacity: 1; }
@@ -101,10 +114,11 @@ li {
   .hero .content h2 {
     font-weight: 400;
     font-size: 24px;
-    margin-bottom: 60px;
+    margin: 0 auto 60px auto;
     font-family: "Pressura", sans-serif;
     color: white;
-    -webkit-text-stroke: none; }
+    -webkit-text-stroke: 0;
+    max-width: 360px; }
   .hero .content img {
     margin-bottom: 60px; }
   .hero .content p {
@@ -129,7 +143,10 @@ li {
 .beach--image {
   background-color: #333333;
   width: 100%;
-  height: 600px; }
+  height: 600px;
+  background-image: url("../images/photos/location.jpeg");
+  background-size: cover;
+  background-position: top; }
 
 .gear-list {
   padding-top: 200px;
@@ -180,9 +197,13 @@ li {
     line-height: 0.9; }
   .gallery .slider {
     max-width: 800px;
-    height: 600px;
+    height: 500px;
     background-color: #333;
     margin: 0 auto; }
+    .gallery .slider img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover; }
   .gallery .slider-text {
     max-width: 400px;
     line-height: 1.8;
@@ -228,6 +249,8 @@ li {
 
 .things {
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
   margin-top: 100px; }
 
 .thing-item {
@@ -239,12 +262,17 @@ li {
     width: 300px;
     height: 300px;
     background-color: #333;
-    border-radius: 100%; }
+    border-radius: 100%;
+    background-size: cover; }
   .thing-item strong {
     margin-top: 40px;
     font-size: 24px; }
   .thing-item p {
     margin-top: 10px; }
+
+.thing-item:hover {
+  opacity: 1;
+  transform: scale(1.05); }
 
 .contact {
   text-align: center;

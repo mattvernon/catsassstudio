@@ -94,6 +94,21 @@ li {
   margin: 0 auto;
 }
 
+.button {
+	background-color: $red;
+	padding: 20px 40px 22px 40px;
+	border-radius: 4px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.button:hover {
+	opacity: 1;
+	transform: scale(1.05);
+}
+
 // specific styling
 
 .nav {
@@ -108,14 +123,14 @@ li {
 		margin: 0 15px;
 	}
 
-	.button {
+	.hollow-button {
 		padding: 15px 40px;
 		border: 1px solid white;
 		border-radius: 4px;
 		transition: 0.2s;
 	}
 
-	.button:hover {
+	.hollow-button:hover {
 		background-color: white;
 		color: $black;
 		opacity: 1;
@@ -144,10 +159,11 @@ li {
 		h2 {
 			font-weight: 400;
 			font-size: 24px;
-			margin-bottom: 60px;
+			margin: 0 auto 60px auto;
 			font-family: $pressura;
 			color: white;
-			-webkit-text-stroke: none;
+			-webkit-text-stroke: 0;
+			max-width: 360px;
 		}
 
 		img {
@@ -186,6 +202,9 @@ li {
 	background-color: #333333;
 	width: 100%;
 	height: 600px;
+	background-image: url('../images/photos/location.jpeg');
+	background-size: cover;
+	background-position: top;
 }
 
 // GEAR
@@ -257,9 +276,15 @@ li {
 
 	.slider {
 		max-width: 800px;
-		height: 600px;
+		height: 500px;
 		background-color: #333;
 		margin: 0 auto;
+
+		img {
+			width: 100%;
+			height: 500px;
+			object-fit: cover;
+		}
 	}
 
 	.slider-text {
@@ -319,6 +344,8 @@ li {
 
 .things {
 	display: flex;
+	align-items: flex-start;
+	justify-content: center;
 	margin-top: 100px;
 }
 
@@ -333,6 +360,7 @@ li {
 		height: 300px;
 		background-color: #333;
 		border-radius: 100%;
+		background-size: cover;
 	}
 
 	strong {
@@ -343,6 +371,11 @@ li {
 	p {
 		margin-top: 10px;
 	}
+}
+
+.thing-item:hover {
+	opacity: 1;
+	transform: scale(1.05);
 }
 
 .contact {
