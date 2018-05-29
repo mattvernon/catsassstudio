@@ -294,6 +294,20 @@ li {
 	}
 }
 
+.slider-buttons {
+	max-width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: -270px
+}
+
+.prev,
+.next {
+	cursor: pointer;
+}
+
 .whats-good {
 	text-align: center;
 	padding-top: 50px;

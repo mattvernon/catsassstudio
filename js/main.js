@@ -3,6 +3,9 @@ $('a[href*="#"]')
   // Remove links that don't actually link to anything
   .not('[href="#"]')
   .not('[href="#0"]')
+  .not('[href="#tab1"]')
+  .not('[href="#tab2"]')
+  .not('[href="#tab3"]')
   .click(function(event) {
     // On-page links
     if (
@@ -22,15 +25,35 @@ $('a[href*="#"]')
         }, 400, function() {
           // Callback after animation
           // Must change focus!
-          var $target = $(target);
-          $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
-            return false;
-          } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
-          };
+          // var $target = $(target);
+          // $target.focus();
+          // if ($target.is(":focus")) { // Checking if the target was focused
+          //   return false;
+          // } else {
+          //   $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+          //   $target.focus(); // Set focus again
+          // };
         });
       }
     }
   });
+
+
+// show first content by default
+$('#toggle a:first-child').addClass('active');
+$('.things').hide();
+$('.things:first').show();
+
+// click function
+$('#toggle a').click(function(){
+  $('#toggle a').removeClass('active');
+  $(this).addClass('active');
+  $('.things').hide();
+
+  var activeTab = $(this).attr('href');
+  $(activeTab).fadeIn();
+  return false;
+});
+
+document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
+document.querySelector('.next').addEventListener('click', () => mySiema.next());
