@@ -4,6 +4,32 @@ $black: #101010;
 $pressura: 'Pressura', sans-serif;
 $ferry: 'Ferry Black', sans-serif;
 
+// media queries
+
+@mixin small {
+  @media (max-width: 680px) {
+    @content;
+  }
+}
+
+@mixin inbetween {
+  @media (max-width: 874px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (max-width: 1040px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (max-width: 1170px) {
+    @content;
+  }
+}
+
 // fonts
 
 @font-face {
@@ -32,6 +58,7 @@ body {
   color: white;
   margin: 0;
   padding: 0;
+	overflow-x: hidden;
 
   box-sizing: border-box;
 
@@ -92,6 +119,10 @@ li {
   max-width: 1200px;
   padding: 0 60px;
   margin: 0 auto;
+
+	@include medium {
+		padding: 0 30px;
+	}
 }
 
 .button {
@@ -116,6 +147,10 @@ li {
 	align-items: center;
 	justify-content: space-between;
 	padding: 60px 30px;
+
+	@include small {
+		display: none;
+	}
 
 	a {
 		text-transform: uppercase;
@@ -146,6 +181,26 @@ li {
 
 	a {
 		margin-top: 10px;
+	}
+
+	@include small {
+		display: none;
+	}
+}
+
+.social-nav-mobile {
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin: 60px auto;
+	display: none;
+
+	a {
+		margin: 0 10px;
+	}
+
+	@include small {
+		display: flex;
 	}
 }
 
@@ -205,6 +260,14 @@ li {
 	background-image: url('../images/photos/location.jpeg');
 	background-size: cover;
 	background-position: top;
+
+	@include medium {
+		height: 400px;
+	}
+
+	@include small {
+		height: 250px;
+	}
 }
 
 // GEAR
@@ -212,6 +275,10 @@ li {
 .gear-list {
 	padding-top: 200px;
 	padding-bottom: 50px;
+
+	@include medium {
+		padding-top: 30px;
+	}
 }
 
 .gear-columns {
@@ -219,10 +286,18 @@ li {
 	align-items: flex-start;
 	flex-direction: row;
 	justify-content: space-between;
+
+	@include medium {
+		flex-wrap: wrap;
+	}
 }
 
 .column {
 	width: calc(100% / 3);
+
+	@include medium {
+		width: 100%;
+	}
 }
 
 .column:nth-child(1n) {
@@ -270,8 +345,16 @@ li {
 	padding-top: 50px;
 	padding-bottom: 50px;
 
+	@include small {
+		padding-bottom: 10px;
+	}
+
 	h2 {
 		line-height: 0.9;
+
+		@include small {
+			font-size: 40px;
+		}
 	}
 
 	.slider {
@@ -279,6 +362,10 @@ li {
 		height: 500px;
 		background-color: #333;
 		margin: 0 auto;
+
+		@include medium {
+			height: 400px;
+		}
 
 		img {
 			width: 100%;
@@ -291,6 +378,10 @@ li {
 		max-width: 400px;
 		line-height: 1.8;
 		margin: 60px auto;
+
+		@include small {
+			margin: 30px auto;
+		}
 	}
 }
 
@@ -300,7 +391,11 @@ li {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-top: -270px
+	margin-top: -270px;
+
+	@include medium {
+		display: none;
+	}
 }
 
 .prev,
@@ -312,6 +407,10 @@ li {
 	text-align: center;
 	padding-top: 50px;
 	padding-bottom: 100px;
+
+	@include small {
+		padding-top: 20px;
+	}
 
 	h2 {
 		color: white;
@@ -338,6 +437,12 @@ li {
 	letter-spacing: 1px;
 	width: 100px;
 	display: inline-block;
+
+	@include small {
+		padding: 8px;
+		width: 80px;
+		font-size: 12px;
+	}
 }
 
 .toggle-btn:hover {
@@ -361,6 +466,10 @@ li {
 	align-items: flex-start;
 	justify-content: center;
 	margin-top: 100px;
+
+	@include small {
+		flex-wrap: wrap;
+	}
 }
 
 .thing-item {
@@ -368,6 +477,13 @@ li {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	margin-left: 10px;
+	margin-right: 10px;
+
+	@include small {
+		width: 100%;
+		margin-bottom: 10px;
+	}
 
 	.thing-image {
 		width: 300px;
@@ -375,6 +491,11 @@ li {
 		background-color: #333;
 		border-radius: 100%;
 		background-size: cover;
+
+		@include medium {
+			width: 150px;
+			height: 150px;
+		}
 	}
 
 	strong {
@@ -407,6 +528,10 @@ li {
 	p {
 		margin-bottom: 0;
 		margin-top: 0;
+	}
+
+	@include small {
+		padding-bottom: 20px;
 	}
 }
 
@@ -476,10 +601,93 @@ input[type=submit]:hover {
 	cursor: pointer;
 }
 
+// big asses
 
+.ass {
+	position: absolute;
+	z-index: -1;
 
-// media queries
+	@include medium {
+		display: none;
+	}
+}
 
-@media(max-width:900px) {
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
+@-moz-keyframes rspin { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes rspin { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes rspin { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+
+#big-ass {
+	top: 180px;
+	left: -300px;
+	-webkit-animation: spin 12s linear infinite;
+    -moz-animation: spin 12s linear infinite;
+    animation: spin 12s linear infinite;
+}
+
+#regular-ass {
+	top: 260px;
+	right: -40px;
+	-webkit-animation: rspin 16s linear infinite;
+    -moz-animation: rspin 16s linear infinite;
+    animation: rspin 16s linear infinite;
+}
+
+#medium-ass {
+	top: 1450px;
+	right: 200px;
+	-webkit-animation: rspin 9s linear infinite;
+    -moz-animation: rspin 9s linear infinite;
+    animation: rspin 9s linear infinite;
+}
+
+#red-ass {
+	top: 2950px;
+	left: 100px;
+	-webkit-animation: spin 9s linear infinite;
+    -moz-animation: spin 9s linear infinite;
+    animation: spin 9s linear infinite;
+
+		@include medium {
+			right: 50px;
+			left: auto;
+		}
+}
+
+#big-ass-2 {
+	top: 5000px;
+	left: -200px;
+	-webkit-animation: spin 30s linear infinite;
+    -moz-animation: spin 30s linear infinite;
+    animation: spin 30s linear infinite;
+
+		@include large {
+			display: none;
+		}
+}
+
+#red-ass-2 {
+	right: 100px;
+	top: 5100px;
+	-webkit-animation: rspin 9s linear infinite;
+    -moz-animation: rspin 9s linear infinite;
+    animation: rspin 9s linear infinite;
+
+	@include large {
+		display: none;
+	}
+}
+
+.fadein {
+  opacity: 0;
+  transition: all 1.5s;
+  transform: translate(0, 100px);
+}
+
+.fadein.visible {
+  opacity: 1;
+  transform: translate(0, 0);
 }

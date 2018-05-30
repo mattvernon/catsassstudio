@@ -16,6 +16,7 @@ body {
   color: white;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased; }
 
@@ -65,6 +66,9 @@ li {
   max-width: 1200px;
   padding: 0 60px;
   margin: 0 auto; }
+  @media (max-width: 1040px) {
+    .wrapper {
+      padding: 0 30px; } }
 
 .button {
   background-color: #FF6F6F;
@@ -84,6 +88,9 @@ li {
   align-items: center;
   justify-content: space-between;
   padding: 60px 30px; }
+  @media (max-width: 680px) {
+    .nav {
+      display: none; } }
   .nav a {
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -106,6 +113,21 @@ li {
   bottom: 30px; }
   .social-nav a {
     margin-top: 10px; }
+  @media (max-width: 680px) {
+    .social-nav {
+      display: none; } }
+
+.social-nav-mobile {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 60px auto;
+  display: none; }
+  .social-nav-mobile a {
+    margin: 0 10px; }
+  @media (max-width: 680px) {
+    .social-nav-mobile {
+      display: flex; } }
 
 .hero .content {
   margin: 0 auto;
@@ -147,19 +169,34 @@ li {
   background-image: url("../images/photos/location.jpeg");
   background-size: cover;
   background-position: top; }
+  @media (max-width: 1040px) {
+    .beach--image {
+      height: 400px; } }
+  @media (max-width: 680px) {
+    .beach--image {
+      height: 250px; } }
 
 .gear-list {
   padding-top: 200px;
   padding-bottom: 50px; }
+  @media (max-width: 1040px) {
+    .gear-list {
+      padding-top: 30px; } }
 
 .gear-columns {
   display: flex;
   align-items: flex-start;
   flex-direction: row;
   justify-content: space-between; }
+  @media (max-width: 1040px) {
+    .gear-columns {
+      flex-wrap: wrap; } }
 
 .column {
   width: calc(100% / 3); }
+  @media (max-width: 1040px) {
+    .column {
+      width: 100%; } }
 
 .column:nth-child(1n) {
   padding-right: 15px; }
@@ -193,13 +230,22 @@ li {
   text-align: center;
   padding-top: 50px;
   padding-bottom: 50px; }
+  @media (max-width: 680px) {
+    .gallery {
+      padding-bottom: 10px; } }
   .gallery h2 {
     line-height: 0.9; }
+    @media (max-width: 680px) {
+      .gallery h2 {
+        font-size: 40px; } }
   .gallery .slider {
     max-width: 800px;
     height: 500px;
     background-color: #333;
     margin: 0 auto; }
+    @media (max-width: 1040px) {
+      .gallery .slider {
+        height: 400px; } }
     .gallery .slider img {
       width: 100%;
       height: 500px;
@@ -208,6 +254,9 @@ li {
     max-width: 400px;
     line-height: 1.8;
     margin: 60px auto; }
+    @media (max-width: 680px) {
+      .gallery .slider-text {
+        margin: 30px auto; } }
 
 .slider-buttons {
   max-width: 1000px;
@@ -216,6 +265,9 @@ li {
   align-items: center;
   justify-content: space-between;
   margin-top: -270px; }
+  @media (max-width: 1040px) {
+    .slider-buttons {
+      display: none; } }
 
 .prev,
 .next {
@@ -225,6 +277,9 @@ li {
   text-align: center;
   padding-top: 50px;
   padding-bottom: 100px; }
+  @media (max-width: 680px) {
+    .whats-good {
+      padding-top: 20px; } }
   .whats-good h2 {
     color: white;
     -webkit-text-stroke: none;
@@ -245,6 +300,11 @@ li {
   letter-spacing: 1px;
   width: 100px;
   display: inline-block; }
+  @media (max-width: 680px) {
+    .toggle-btn {
+      padding: 8px;
+      width: 80px;
+      font-size: 12px; } }
 
 .toggle-btn:hover {
   background-color: white;
@@ -264,18 +324,31 @@ li {
   align-items: flex-start;
   justify-content: center;
   margin-top: 100px; }
+  @media (max-width: 680px) {
+    .things {
+      flex-wrap: wrap; } }
 
 .thing-item {
   width: calc(100% / 3);
   display: flex;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px; }
+  @media (max-width: 680px) {
+    .thing-item {
+      width: 100%;
+      margin-bottom: 10px; } }
   .thing-item .thing-image {
     width: 300px;
     height: 300px;
     background-color: #333;
     border-radius: 100%;
     background-size: cover; }
+    @media (max-width: 1040px) {
+      .thing-item .thing-image {
+        width: 150px;
+        height: 150px; } }
   .thing-item strong {
     margin-top: 40px;
     font-size: 24px; }
@@ -296,6 +369,9 @@ li {
   .contact p {
     margin-bottom: 0;
     margin-top: 0; }
+  @media (max-width: 680px) {
+    .contact {
+      padding-bottom: 20px; } }
 
 .credits {
   margin-top: 60px; }
@@ -352,5 +428,93 @@ input[type=submit]:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
   cursor: pointer; }
+
+.ass {
+  position: absolute;
+  z-index: -1; }
+  @media (max-width: 1040px) {
+    .ass {
+      display: none; } }
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg); } }
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-moz-keyframes rspin {
+  100% {
+    -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes rspin {
+  100% {
+    -webkit-transform: rotate(-360deg); } }
+@keyframes rspin {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+#big-ass {
+  top: 180px;
+  left: -300px;
+  -webkit-animation: spin 12s linear infinite;
+  -moz-animation: spin 12s linear infinite;
+  animation: spin 12s linear infinite; }
+
+#regular-ass {
+  top: 260px;
+  right: -40px;
+  -webkit-animation: rspin 16s linear infinite;
+  -moz-animation: rspin 16s linear infinite;
+  animation: rspin 16s linear infinite; }
+
+#medium-ass {
+  top: 1450px;
+  right: 200px;
+  -webkit-animation: rspin 9s linear infinite;
+  -moz-animation: rspin 9s linear infinite;
+  animation: rspin 9s linear infinite; }
+
+#red-ass {
+  top: 2950px;
+  left: 100px;
+  -webkit-animation: spin 9s linear infinite;
+  -moz-animation: spin 9s linear infinite;
+  animation: spin 9s linear infinite; }
+  @media (max-width: 1040px) {
+    #red-ass {
+      right: 50px;
+      left: auto; } }
+
+#big-ass-2 {
+  top: 5000px;
+  left: -200px;
+  -webkit-animation: spin 30s linear infinite;
+  -moz-animation: spin 30s linear infinite;
+  animation: spin 30s linear infinite; }
+  @media (max-width: 1170px) {
+    #big-ass-2 {
+      display: none; } }
+
+#red-ass-2 {
+  right: 100px;
+  top: 5100px;
+  -webkit-animation: rspin 9s linear infinite;
+  -moz-animation: rspin 9s linear infinite;
+  animation: rspin 9s linear infinite; }
+  @media (max-width: 1170px) {
+    #red-ass-2 {
+      display: none; } }
+
+.fadein {
+  opacity: 0;
+  transition: all 1.5s;
+  transform: translate(0, 100px); }
+
+.fadein.visible {
+  opacity: 1;
+  transform: translate(0, 0); }
 
 /*# sourceMappingURL=application.css.map */
