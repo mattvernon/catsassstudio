@@ -468,6 +468,11 @@ li {
 	}
 }
 
+.active {
+	background-color: white;
+	color: $black;
+}
+
 .toggle-btn:hover {
 	background-color: white;
 	opacity: 1;

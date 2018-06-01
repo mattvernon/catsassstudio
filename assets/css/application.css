@@ -322,6 +322,10 @@ li {
       width: 80px;
       font-size: 12px; } }
 
+.active {
+  background-color: white;
+  color: #101010; }
+
 .toggle-btn:hover {
   background-color: white;
   opacity: 1;
